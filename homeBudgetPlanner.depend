@@ -1,0 +1,143 @@
+# depslib dependency file v1.0
+1569492818 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\expense.cpp
+	"Expense.h"
+
+1569488673 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\homefinancecalculator.cpp
+	"HomeFinanceCalculator.h"
+
+1569509757 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\homefinancecalculator.h
+	<iostream>
+	"UserManager.h"
+	"IncomesManager.h"
+	"ExpensesManager.h"
+
+1565105759 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\usermanager.h
+	<iostream>
+	<vector>
+	"Markup.h"
+	<windows.h>
+	<sstream>
+	"User.h"
+	"AuxiliaryMethods.h"
+	"FileWithUsers.h"
+
+1559140621 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\user.h
+	<iostream>
+
+1567379115 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\income.h
+	<iostream>
+
+1569492780 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\expense.h
+	<iostream>
+
+1569502403 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\income.cpp
+	"Income.h"
+
+1569492356 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\main.cpp
+	<iostream>
+	"windows.h"
+	"HomeFinanceCalculator.h"
+
+1303070812 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1303070812 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1559140527 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\user.cpp
+	"User.h"
+
+1565102810 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\usermanager.cpp
+	"UserManager.h"
+
+1569492356 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\auxiliarymethods.cpp
+	"AuxiliaryMethods.h"
+
+1569494735 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\auxiliarymethods.h
+	<iostream>
+	<sstream>
+	<algorithm>
+	<windows.h>
+	<winbase.h>
+	<ctime>
+	<conio.h>
+	<string>
+	<stdlib.h>
+
+1563730357 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithusers.h
+	<iostream>
+	<vector>
+	"Markup.h"
+	<cstdlib>
+	"User.h"
+	"AuxiliaryMethods.h"
+
+1563802424 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithusers.cpp
+	"FileWithUsers.h"
+
+1569502704 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\expensesmanager.cpp
+	"ExpensesManager.h"
+
+1569492868 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithexpenses.cpp
+	"FileWithExpenses.h"
+
+1567374203 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithincomes.cpp
+	"FileWithIncomes.h"
+
+1564429487 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithincomes.h
+	<iostream>
+	<vector>
+	"Markup.h"
+	<cstdlib>
+	<sstream>
+	<stdlib.h>
+	"Income.h"
+	"AuxiliaryMethods.h"
+
+1569492356 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\incomesmanager.h
+	<iostream>
+	<vector>
+	"Markup.h"
+	<windows.h>
+	<algorithm>
+	<sstream>
+	<string.h>
+	<iomanip>
+	"Income.h"
+	"AuxiliaryMethods.h"
+	"FileWithIncomes.h"
+
+1569492356 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\incomesmanager.cpp
+	"IncomesManager.h"
+
+1569492382 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithexpenses.h
+	<iostream>
+	<vector>
+	"Markup.h"
+	<cstdlib>
+	<sstream>
+	<stdlib.h>
+	"Expense.h"
+	"AuxiliaryMethods.h"
+
+1569493437 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\expensesmanager.h
+	<iostream>
+	<vector>
+	"Markup.h"
+	<windows.h>
+	<algorithm>
+	<sstream>
+	<string.h>
+	<iomanip>
+	"Expense.h"
+	"AuxiliaryMethods.h"
+	"FileWithExpenses.h"
+
