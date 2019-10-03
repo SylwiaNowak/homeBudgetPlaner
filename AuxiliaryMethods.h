@@ -7,8 +7,7 @@
 #include <windows.h>
 #include <winbase.h>
 #include <ctime>
-#include <conio.h> //getch();
-//#include <iomanip> //stof(); z funkcji: static double convertStringToFloat(string myString);
+#include <conio.h> //getch()
 #include <string>
 #include <stdlib.h> //atof()
 
@@ -16,17 +15,12 @@ using namespace std;
 
 class AuxiliaryMethods {
 public:
-    //static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-    //static string konwerjsaIntNaString(int liczba);
-    //static int konwersjaStringNaInt(string liczba);
     static string loadTheLine();
     char loadTheSign();
     char chooseOptionFromDateMenu();
     char chooseOptionFromRepairDateMenu();
-    //int wczytajLiczbeCalkowita();
-    //string pobierzLiczbe(string tekst, int pozycjaZnaku);
-    double returnAmountInCorrectFormat(string amountToCheck);//PRZENIESIONE
-    bool checkIfTheDateIsCorrect(string date);//PRZENIESIONE
+    double returnAmountInCorrectFormat(string amountToCheck);
+    bool checkIfTheDateIsCorrect(string date);
     string loadActuallyDate();
     string loadActuallyMonth();
     string loadPreviousMonth(string actuallyDateToChange);
@@ -34,7 +28,6 @@ public:
     static double convertStringToDouble(string myString);
     int convertStringToInt(string myString);
     string convertIntToString(int myInt);
-    //void sortFinancePositions();
     string convertStringDateToStringDateWithoutSeparatingCharakter(string myString);
     string convertIntToStringWithSeparatingCharacter(int myInt);
     bool checkingIfDateIsContainedInActuallyMonth(int temporaryDateInInt);

@@ -3,7 +3,6 @@
 void IncomesManager::addIncome() {
     Income income;
 
-    //cout << "USER ID: " << LOGGED_IN_USER_ID << endl; //TEST
     system("cls");
     cout << " >>> ADDING NEW INCOME <<<" << endl << endl;
     income = inputDataOfTheNewIncome();
@@ -14,7 +13,7 @@ void IncomesManager::addIncome() {
     else cout << "ERROR. It was not possible to add a new income to the file." << endl;
     system("pause");
 
-    system("cls");
+    /*system("cls");
     for (int i = 0; i < incomes.size(); i++) {
         cout << incomes[i].getIncomeId() << endl;
         cout << incomes[i].getUserId() << endl;
@@ -22,7 +21,7 @@ void IncomesManager::addIncome() {
         cout << incomes[i].getItem() << endl;
         cout << incomes[i].getAmount() << endl;
     }
-    system("pause");
+    system("pause");*/
 }
 
 Income IncomesManager::inputDataOfTheNewIncome() {
@@ -102,7 +101,8 @@ double IncomesManager::balanceOfTheIncomesInTheCurrentMonth() {
     AuxiliaryMethods auxiliaryMethods;
     int temporaryDateInInt = 0;
     string temporaryDateInString = "";
-    double incomesAmount = 0;
+    incomesAmount = 0;
+    int numberOfSelectedIncome = 1;
 
     vector <Income>::iterator itr = incomes.begin();
 
@@ -116,20 +116,18 @@ double IncomesManager::balanceOfTheIncomesInTheCurrentMonth() {
         if (auxiliaryMethods.checkingIfDateIsContainedInActuallyMonth(temporaryDateInInt) == true) {
 
             temporaryDateInString = auxiliaryMethods.convertIntToStringWithSeparatingCharacter(temporaryDateInInt);
-            cout << itr -> getIncomeId() << " - " << itr -> getUserId() << " - " << temporaryDateInString << " - " << itr -> getItem() << " - " << itr -> getAmount() << endl;
+            cout << numberOfSelectedIncome << " - " << temporaryDateInString << " - " << itr -> getItem() << " - " << itr -> getAmount() << endl;
             incomesAmount += itr -> getAmount();
+            numberOfSelectedIncome++;
         }
-
         itr++;
         temporaryDateInInt = 0;
         temporaryDateInString = "";
     }
-
     cout << fixed;
     cout << setprecision(2);
     cout << "Amount of the incomes (of the current month): " << incomesAmount << endl;
 
-    system("pause");
     return 0;
 }
 
@@ -138,7 +136,8 @@ double IncomesManager::balanceOfTheIncomesInThePreviousMonth() {
     AuxiliaryMethods auxiliaryMethods;
     int temporaryDateInInt = 0;
     string temporaryDateInString = "";
-    double incomesAmount = 0;
+    incomesAmount = 0;
+    int numberOfSelectedIncome = 1;
 
     vector <Income>::iterator itr = incomes.begin();
 
@@ -151,68 +150,56 @@ double IncomesManager::balanceOfTheIncomesInThePreviousMonth() {
 
         if (auxiliaryMethods.checkingIfDateIsContainedInPreviousMonth(temporaryDateInInt) == true) {
             temporaryDateInString = auxiliaryMethods.convertIntToStringWithSeparatingCharacter(temporaryDateInInt);
-            cout << itr -> getIncomeId() << " - " << itr -> getUserId() << " - " << temporaryDateInString << " - " << itr -> getItem() << " - " << itr -> getAmount() << endl;
+            cout << numberOfSelectedIncome << " - " << temporaryDateInString << " - " << itr -> getItem() << " - " << itr -> getAmount() << endl;
             incomesAmount += itr -> getAmount();
+            numberOfSelectedIncome++;
         }
-
         itr++;
         temporaryDateInInt = 0;
         temporaryDateInString = "";
     }
-
     cout << fixed;
     cout << setprecision(2);
     cout << "Amount of the incomes (of the previous month): " << incomesAmount << endl;
 
-    system("pause");
     return 0;
 }
 
-double IncomesManager::balanceOfTheIncomesInTheSelectedTime() {
+double IncomesManager::balanceOfTheIncomesInTheSelectedTime(string startingDate, string endDate) {
     Income income;
     AuxiliaryMethods auxiliaryMethods;
     int temporaryDateInInt = 0;
     string temporaryDateInString = "";
-    double incomesAmount = 0;
-    string startingDate = "", endDate = "";
+    incomesAmount = 0;
+    int numberOfSelectedIncome = 1;
 
     vector <Income>::iterator itr = incomes.begin();
 
     sort(incomes.begin(), incomes.end(), less_than_key);
 
-    system("cls");
-    cout << "Enter date from which one you need to generate balance (in format yyyy-mm-dd): ";
-    cin >> startingDate;
-    if (auxiliaryMethods.checkIfTheDateIsCorrect(startingDate) == true) {
-        cout << "Enter end date for which one you need to generate balance (in format yyyy-mm-dd): ";
-        cin >> endDate;
-        if (auxiliaryMethods.checkIfTheDateIsCorrect(endDate) == true) {
+    cout << endl << endl << endl;
 
-            cout << "----------- BALANCE OF THE SELECTED TIME (INCOMES) -----------" << endl;
-            while (itr != incomes.end()) {
-                temporaryDateInInt = itr -> getDate();
+    cout << "----------- BALANCE OF THE SELECTED TIME (INCOMES) -----------" << endl;
+    while (itr != incomes.end()) {
+        temporaryDateInInt = itr -> getDate();
 
-                if (auxiliaryMethods.checkingIfDateIsContainedInSelectedTime(temporaryDateInInt, startingDate, endDate) == true) {
-                    temporaryDateInString = auxiliaryMethods.convertIntToStringWithSeparatingCharacter(temporaryDateInInt);
-                    cout << itr -> getIncomeId() << " - " << itr -> getUserId() << " - " << temporaryDateInString << " - " << itr -> getItem() << " - " << itr -> getAmount() << endl;
-                    incomesAmount += itr -> getAmount();
-                }
-                itr++;
-                temporaryDateInInt = 0;
-                temporaryDateInString = "";
-            }
-            cout << fixed;
-            cout << setprecision(2);
-            cout << "Amount of the incomes (of the previous month): " << incomesAmount << endl;
-        } else {
-            cout << "The end date format is incorrect." << endl;
-            exit(0);
+        if (auxiliaryMethods.checkingIfDateIsContainedInSelectedTime(temporaryDateInInt, startingDate, endDate) == true) {
+            temporaryDateInString = auxiliaryMethods.convertIntToStringWithSeparatingCharacter(temporaryDateInInt);
+            cout << numberOfSelectedIncome << " - " << temporaryDateInString << " - " << itr -> getItem() << " - " << itr -> getAmount() << endl;
+            incomesAmount += itr -> getAmount();
+            numberOfSelectedIncome++;
         }
-    } else {
-        cout << "The starting date format is incorrect." << endl;
-        exit(0);
+        itr++;
+        temporaryDateInInt = 0;
+        temporaryDateInString = "";
     }
-    system("pause");
+    cout << fixed;
+    cout << setprecision(2);
+    cout << "Amount of the incomes (of the previous month): " << incomesAmount << endl;
+
     return 0;
 }
 
+double IncomesManager::getIncomesAmount() {
+    return incomesAmount;
+}

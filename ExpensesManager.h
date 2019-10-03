@@ -10,8 +10,6 @@
 #include <string.h>
 #include <iomanip>
 
-
-
 #include "Expense.h"
 #include "AuxiliaryMethods.h"
 
@@ -23,21 +21,9 @@ class ExpensesManager {
     const int LOGGED_IN_USER_ID;
     vector <Expense> expenses;
     FileWithExpenses fileWithExpenses;
-    //AuxiliaryMethods auxiliaryMethods;
+    double expensesAmount;
 
-    //char chooseOptionFromDateMenu(); //POWTARZA SIE
-    //char chooseOptionFromRepairDateMenu(); //POWTARZA SIE
     Expense inputDataOfTheNewExpense();
-
-
-
-
-
-
-
-    //double returnAmountInCorrectFormat(string amountToCheck);//POWTARZA SIE
-    //bool checkIfTheDateIsCorrect(string date);//POWTARZA SIE
-
     bool static less_than_key(const Expense& struct1, const Expense& struct2);
 
 public:
@@ -45,20 +31,14 @@ public:
     : fileWithExpenses(nameOfFileWithExpenses), LOGGED_IN_USER_ID(loggedInUserId)
     {
     expenses = fileWithExpenses.loadExpensesBelongToLoggedInUserFromTheFile(LOGGED_IN_USER_ID);
-
-
+    expensesAmount = 0;
     }
 
     void addExpense();
     double balanceOfTheExpensesInTheCurrentMonth();
     double balanceOfTheExpensesInThePreviousMonth();
-    double balanceOfTheExpensesInTheSelectedTime();
-
-
-
-
-
-
+    double balanceOfTheExpensesInTheSelectedTime(string startingDate, string endDate);
+    double getExpensesAmount();
 };
 
 #endif

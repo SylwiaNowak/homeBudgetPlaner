@@ -40,59 +40,12 @@ char UserManager::chooseOptionFromTheUserMenu() {
 }
 
 void UserManager::userRegistration() {
-    /*Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
-    uzytkownicy.push_back(uzytkownik);
-    plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
-
-    cout << endl << "Konto zalozono pomyslnie" << endl << endl;
-    system("pause");*/
-
-    //CMarkup xml; DONE
     User user = inputDataOfTheNewUser();
     users.push_back(user);
     fileWithUsers.saveNewUserToTheFile(user);
 
-    //int userId;
-    //string name, surname, login, password;
-
-    /*bool fileExist = xml.Load("users.xml");
-
-    if (!fileExist) {
-        xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
-        xml.AddElem( "Users" );
-    }
-
-    xml.FindElem();
-    xml.IntoElem();
-    xml.AddElem("User");
-    xml.IntoElem();*/
-    //userId = getIdOfTheNewUser(); DONE
-    //user.setUserId(userId); DONE
-    //xml.AddElem("UserId", user.getUserId());
-    //cout << "Give your name: " << endl; DONE
-    //cin >> name; DONE
-    //user.setName(name); DONE
-    //xml.AddElem("Name", user.getName());
-    //cout << "Give your surname: " << endl; DONE
-    //cin >> surname; DONE
-    //user.setSurname(surname); DONE
-    //xml.AddElem("Surname", user.getSurname());
-    //cout << "Give your login: " << endl; DONE
-    //cin >> login; DONE
-    //user.setLogin(login); DONE
-    //xml.AddElem("Login", user.getLogin());
-    //cout << "Give your password: " << endl; DONE
-    //cin >> password; DONE
-    //user.setPassword(password); DONE
-    //xml.AddElem("Password", user.getPassword());
-
-    //xml.Save( "users.xml" ); //plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
-    //users.push_back(user);
-
     cout << endl << "Account is done successfully." << endl << endl;
-    system("pause");
-
-    //cout << "Id kolejnego uzytkownika: " << userId + 1 << endl;
+    getchar();getchar();
 }
 
 User UserManager::inputDataOfTheNewUser() {
@@ -140,10 +93,6 @@ bool UserManager::isTheLoginExist(string login) {
     return false;
 }
 
-/*vector <User> UserManager::loadUsersFromTheFile() {
-    return fileWithUsers.loadUsersFromTheFile();
-}*/
-
 void UserManager::showUsers() {
     for (int i = 0; i< users.size(); i++) {
         cout << users[i].getUserId() << endl;
@@ -155,7 +104,6 @@ void UserManager::showUsers() {
 }
 
 void UserManager::logInTheUser() {
-    //Uzytkownik uzytkownik;
     string login = "", password = "";
 
     cout << endl << "Give your login: ";
@@ -163,7 +111,6 @@ void UserManager::logInTheUser() {
 
     vector <User>::iterator itr = users.begin();
     while (itr != users.end())
-        //for (int i = 0; i < uzytkownicy.size(); i++)
     {
         if (itr -> getLogin() == login) {
             for (int attempt = 3; attempt > 0; attempt--) {
@@ -173,10 +120,7 @@ void UserManager::logInTheUser() {
                 if (itr -> getPassword() == password) {
                     loggedInUserId = itr -> getUserId();
                     cout << endl << "You are logged in." << endl << endl;
-                    //cout << "ID: " << loggedInUserId << endl;
                     system("pause");
-                    //void uruchomOpcjeZMenuUzytkownika();
-                    //idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
                     return;
                 }
             }
@@ -198,7 +142,6 @@ void UserManager::changeThePasswordOfTheLoggedInUser() {
 
     if (isTheUserLoggedIn()) {
         for (vector <User>::iterator itr = users.begin(); itr != users.end(); itr++) {
-            //for (int i = 0; i < uzytkownicy.size(); i++) {
             if (itr -> getUserId() == loggedInUserId) {
                 itr -> setPassword(newPassword);
                 cout << "Password is changed." << endl << endl;

@@ -152,7 +152,6 @@ string AuxiliaryMethods::loadActuallyDate() {
     data = localtime( & czas );
 
     strftime( dzisiejsza_data, 80, "%Y-%m-%d", data );
-    //cout << dzisiejsza_data << endl;
 
     //getch(); //nie czeka na klawisz enter
 
@@ -168,7 +167,6 @@ string AuxiliaryMethods::loadActuallyMonth() {
     miesiac = localtime( & czas );
 
     strftime( aktualny_miesiac, 80, "%Y-%m", miesiac );
-    //cout << dzisiejsza_data << endl;
 
     //getch(); //nie czeka na klawisz enter
 
@@ -214,14 +212,6 @@ string AuxiliaryMethods::convertDoubleToString(double myDouble) {
 }
 
 double AuxiliaryMethods::convertStringToDouble(string myString) {
-    //double v = stof(myString);
-
-    //string text = "199102.92";
-//double v = std::stof(text);
-    //setprecision(2) << fixed << v ;
-
-    //string word;
-    //openfile >> word;
     double v = atof(myString.c_str());
 
     return v;

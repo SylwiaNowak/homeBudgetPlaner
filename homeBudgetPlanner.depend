@@ -2,21 +2,24 @@
 1569492818 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\expense.cpp
 	"Expense.h"
 
-1569488673 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\homefinancecalculator.cpp
+1570098774 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\homefinancecalculator.cpp
 	"HomeFinanceCalculator.h"
 
-1569509757 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\homefinancecalculator.h
+1570099013 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\homefinancecalculator.h
 	<iostream>
+	<stdio.h>
 	"UserManager.h"
 	"IncomesManager.h"
 	"ExpensesManager.h"
+	"AuxiliaryMethods.h"
 
-1565105759 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\usermanager.h
+1570100167 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\usermanager.h
 	<iostream>
 	<vector>
 	"Markup.h"
 	<windows.h>
 	<sstream>
+	<stdio.h>
 	"User.h"
 	"AuxiliaryMethods.h"
 	"FileWithUsers.h"
@@ -33,7 +36,7 @@
 1569502403 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\income.cpp
 	"Income.h"
 
-1569492356 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\main.cpp
+1570098638 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\main.cpp
 	<iostream>
 	"windows.h"
 	"HomeFinanceCalculator.h"
@@ -55,13 +58,13 @@
 1559140527 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\user.cpp
 	"User.h"
 
-1565102810 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\usermanager.cpp
+1570100167 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\usermanager.cpp
 	"UserManager.h"
 
-1569492356 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\auxiliarymethods.cpp
+1570099950 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\auxiliarymethods.cpp
 	"AuxiliaryMethods.h"
 
-1569494735 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\auxiliarymethods.h
+1570099950 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\auxiliarymethods.h
 	<iostream>
 	<sstream>
 	<algorithm>
@@ -72,7 +75,7 @@
 	<string>
 	<stdlib.h>
 
-1563730357 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithusers.h
+1570099950 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithusers.h
 	<iostream>
 	<vector>
 	"Markup.h"
@@ -80,19 +83,19 @@
 	"User.h"
 	"AuxiliaryMethods.h"
 
-1563802424 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithusers.cpp
+1570099950 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithusers.cpp
 	"FileWithUsers.h"
 
-1569502704 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\expensesmanager.cpp
+1570099013 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\expensesmanager.cpp
 	"ExpensesManager.h"
 
 1569492868 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithexpenses.cpp
 	"FileWithExpenses.h"
 
-1567374203 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithincomes.cpp
+1570099950 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithincomes.cpp
 	"FileWithIncomes.h"
 
-1564429487 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithincomes.h
+1570099950 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithincomes.h
 	<iostream>
 	<vector>
 	"Markup.h"
@@ -102,7 +105,7 @@
 	"Income.h"
 	"AuxiliaryMethods.h"
 
-1569492356 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\incomesmanager.h
+1570099950 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\incomesmanager.h
 	<iostream>
 	<vector>
 	"Markup.h"
@@ -115,10 +118,10 @@
 	"AuxiliaryMethods.h"
 	"FileWithIncomes.h"
 
-1569492356 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\incomesmanager.cpp
+1570099950 source:f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\incomesmanager.cpp
 	"IncomesManager.h"
 
-1569492382 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithexpenses.h
+1570099950 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\filewithexpenses.h
 	<iostream>
 	<vector>
 	"Markup.h"
@@ -128,7 +131,7 @@
 	"Expense.h"
 	"AuxiliaryMethods.h"
 
-1569493437 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\expensesmanager.h
+1570098834 f:\__cpp\_zadaniagit\_obiektowo\homebudgetplanner\expensesmanager.h
 	<iostream>
 	<vector>
 	"Markup.h"

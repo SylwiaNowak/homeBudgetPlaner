@@ -2,11 +2,12 @@
 #define HOMEFINANCECALCULATOR_H
 
 #include <iostream>
+#include <stdio.h>
 
-//#include "Markup.h"
 #include "UserManager.h"
 #include "IncomesManager.h"
 #include "ExpensesManager.h"
+#include "AuxiliaryMethods.h"
 
 using namespace std;
 
@@ -36,7 +37,6 @@ public:
     char chooseOptionFromTheUserMenu();
     bool isTheUserLoggedIn();
     void userRegistration();
-//void wypiszWszystkichUzytkownikow();
     void logInTheUser();
     void changeThePasswordOfTheLoggedInUser();
     void logOutTheUser();

@@ -17,7 +17,7 @@ bool FileWithIncomes::saveTheIncomeToTheFile(Income income) {
     xml.IntoElem();
     xml.AddElem("IncomeId", income.getIncomeId());
     xml.AddElem("UserId", income.getUserId());
-    //ZMIANA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //ZMIANA!!!
     xml.AddElem("Date", auxiliaryMethods.convertIntToStringWithSeparatingCharacter(income.getDate()));
     //
     xml.AddElem("Item", income.getItem());
@@ -59,7 +59,6 @@ vector <Income> FileWithIncomes::loadIncomesBelongToLoggedInUserFromTheFile(int 
                 MCD_STR strDate = xml.GetData();
                 //ZMIANA
                 income.setDate(auxiliaryMethods.convertStringToInt(auxiliaryMethods.convertStringDateToStringDateWithoutSeparatingCharakter(strDate)));
-                //
                 //income.setDate(strDate);
                 xml.FindElem( "Item" );
                 MCD_STR strItem = xml.GetData();
@@ -71,7 +70,7 @@ vector <Income> FileWithIncomes::loadIncomesBelongToLoggedInUserFromTheFile(int 
                 xml.OutOfElem();
             } else xml.OutOfElem();
         }
-        lastIncomeId = income.getIncomeId(); //CZY NAPEWNO TAK MA BYC???????????????
+        lastIncomeId = income.getIncomeId();
     }
     return incomes;
 }

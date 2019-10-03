@@ -10,21 +10,6 @@ vector <User> FileWithUsers::loadUsersFromTheFile() {
     if (!fileExist)
         cout << "No users exist.";
     else {
-        /*MCD_STR strXML = xml.GetDoc();
-        xml.SetDoc(strXML);
-        //xml.SetDoc(csXML);
-        //xml.ResetPos();
-        xml.FindElem();
-        xml.IntoElem();
-        while ( xml.FindElem("User")) {
-            xml.IntoElem();
-            xml.FindElem( "UserId" );
-            int nUserId = atoi(MCD_2PCSZ(xml.GetData()));
-            xml.FindElem( "Name" );
-            MCD_STR strName = xml.GetChildData();
-            users.push_back(user);
-            xml.OutOfElem();
-        }*/
         MCD_STR strXML = xml.GetDoc();
         xml.SetDoc(strXML);
 
@@ -76,7 +61,7 @@ void FileWithUsers::saveNewUserToTheFile(User user) {
     xml.AddElem("Login", user.getLogin());
     xml.AddElem("Password", user.getPassword());
 
-    xml.Save("users.xml"); //plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
+    xml.Save("users.xml");
 }
 
 void FileWithUsers::saveAllUsersToTheFile(vector <User> &users) {
