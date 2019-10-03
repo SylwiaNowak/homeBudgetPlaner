@@ -1,10 +1,5 @@
 #include "HomeFinanceCalculator.h"
 
-/*HomeFinanceCalculator::HomeFinanceCalculator() {
-    //userManager.loadUsersFromTheFile();
-    //userManager.showUsers();
-}*/
-
 bool HomeFinanceCalculator::isTheUserLoggedIn() {
     userManager.isTheUserLoggedIn();
 }
@@ -25,10 +20,8 @@ void HomeFinanceCalculator::logInTheUser() {
     userManager.logInTheUser();
     if (userManager.isTheUserLoggedIn()) {
         incomesManager = new IncomesManager(NAME_OF_FILE_WITH_INCOMES, userManager.getIdOfTheLoggedInUser());
+        expensesManager = new ExpensesManager(NAME_OF_FILE_WITH_EXPENSES, userManager.getIdOfTheLoggedInUser());
     }
-    /*if (uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
-        adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
-    }*/
 }
 
 void HomeFinanceCalculator::changeThePasswordOfTheLoggedInUser() {
@@ -39,49 +32,68 @@ void HomeFinanceCalculator::logOutTheUser() {
     userManager.logOutTheUser();
     delete incomesManager;
     incomesManager = NULL;
+    delete expensesManager;
+    expensesManager = NULL;
 }
 
 void HomeFinanceCalculator::addIncome() {
-    if (userManager.isTheUserLoggedIn()) {
-        incomesManager -> addIncome();
-    } else {
-        cout << "If you want to add income, you have to be logged in first." << endl;
-        system("pause");
-    }
+    incomesManager -> addIncome();
 }
 
 void HomeFinanceCalculator::addExpense() {
-    if (userManager.isTheUserLoggedIn()) {
-        expensesManager -> addExpense();
-    } else {
-        cout << "If you want to add expense, you have to be logged in first." << endl;
-        system("pause");
-    }
+    expensesManager -> addExpense();
 }
 
 void HomeFinanceCalculator::balanceOfTheCurrentMonth() {
-    if (userManager.isTheUserLoggedIn()) {
-        incomesManager -> balanceOfTheIncomesInTheCurrentMonth();
-    } else {
-        cout << "If you want to generate balance of the current month, you have to be logged in first." << endl;
-        system("pause");
-    }
+    double amountOfBalance = 0;
+
+    incomesManager -> balanceOfTheIncomesInTheCurrentMonth();
+    expensesManager -> balanceOfTheExpensesInTheCurrentMonth();
+
+    amountOfBalance = (incomesManager -> getIncomesAmount()) - (expensesManager -> getExpensesAmount());
+
+    cout << endl << endl << "Balance of the current month is: " << amountOfBalance << endl;
+    getchar();getchar();
 }
 
 void HomeFinanceCalculator::balanceOfThePreviousMonth() {
-    if (userManager.isTheUserLoggedIn()) {
-        incomesManager -> balanceOfTheIncomesInThePreviousMonth();
-    } else {
-        cout << "If you want to generate balance of the previous month, you have to be logged in first." << endl;
-        system("pause");
-    }
+    double amountOfBalance = 0;
+    incomesManager -> balanceOfTheIncomesInThePreviousMonth();
+    expensesManager -> balanceOfTheExpensesInThePreviousMonth();
+
+    amountOfBalance = (incomesManager -> getIncomesAmount()) - (expensesManager -> getExpensesAmount());
+
+    cout << endl << endl << "Balance of the previous month is: " << amountOfBalance << endl;
+    getchar();getchar();
 }
 
 void HomeFinanceCalculator::balanceOfTheSelectedTime() {
-    if (userManager.isTheUserLoggedIn()) {
-        incomesManager -> balanceOfTheIncomesInTheSelectedTime();
+    AuxiliaryMethods auxiliaryMethods;
+    string startingDate = "", endDate = "";
+    double amountOfBalance = 0;
+
+    system("cls");
+    cout << "Enter date from which one you need to generate balance (in format yyyy-mm-dd): ";
+    cin >> startingDate;
+    if (auxiliaryMethods.checkIfTheDateIsCorrect(startingDate) == true) {
+        cout << "Enter end date for which one you need to generate balance (in format yyyy-mm-dd): ";
+        cin >> endDate;
+        if (auxiliaryMethods.checkIfTheDateIsCorrect(endDate) == true) {
+            incomesManager -> balanceOfTheIncomesInTheSelectedTime(startingDate, endDate);
+            expensesManager -> balanceOfTheExpensesInTheSelectedTime(startingDate, endDate);
+        } else {
+            cout << "The end date format is incorrect. You come back to \"user menu\"." << endl;
+            getchar();getchar();
+            userManager.chooseOptionFromTheUserMenu();
+        }
     } else {
-        cout << "If you want to generate balance of the selected time, you have to be logged in first." << endl;
-        system("pause");
+        cout << "The end date format is incorrect. You come back to \"user menu\"." << endl;
+        getchar();getchar();
+        userManager.chooseOptionFromTheUserMenu();
     }
+
+    amountOfBalance = (incomesManager -> getIncomesAmount()) - (expensesManager -> getExpensesAmount());
+
+    cout << endl << endl << "Balance from: " << startingDate << " to: " << endDate << " is: " << amountOfBalance << endl;
+    getchar();getchar();
 }

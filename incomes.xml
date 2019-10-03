@@ -245,4 +245,11 @@
 <Item>fucha30</Item>
 <Amount>3000</Amount>
 </Income>
+<Income>
+<IncomeId>36</IncomeId>
+<UserId>2</UserId>
+<Date>2019-09-30</Date>
+<Item>fucha30</Item>
+<Amount>1000</Amount>
+</Income>
 </Incomes>

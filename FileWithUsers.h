@@ -17,10 +17,6 @@ class FileWithUsers//:public PlikTekstowy
     const string NAME_OF_FILE_WITH_USERS;
     vector <User> users;
 
-//bool czyPlikJestPusty(fstream &plikTekstowy); //PRZENIESIONY DO NAGLOWKA "PlikTekstowy"
-//string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
-//Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
-
 public:
     FileWithUsers(string fileWithUsers) : NAME_OF_FILE_WITH_USERS(fileWithUsers) {
 

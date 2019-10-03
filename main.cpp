@@ -2,18 +2,12 @@
 #include "windows.h"
 
 #include "HomeFinanceCalculator.h"
-//#include "FileWithExpenses.h"
-//#include "IncomesManager.h"
-//#include "UserManager.h"
-
 
 using namespace std;
 
 int main() {
     char choice;
-    //HomeFinanceCalculator homeFinanceCalculator;
     HomeFinanceCalculator homeFinanceCalculator("users.xml", "incomes.xml", "expenses.xml");
-    //UserManager userManager("users.xml");
 
     while (true) {
         if (homeFinanceCalculator.isTheUserLoggedIn() == false) {
@@ -64,24 +58,3 @@ int main() {
     }
     return 0;
 }
-
-
-/*int main() {
-    UserManager userManager ("users.xml");
-    FileWithIncomes fileWithIncomes ("incomes.xml");
-    IncomesManager incomesManager ("incomes.xml", 0);
-
-    int lastIncomeId;
-    int LOGGED_IN_USER_ID;
-
-    lastIncomeId = fileWithIncomes.getLastIncomeId();
-    userManager.logInTheUser();
-    LOGGED_IN_USER_ID = userManager.downloadIdOfTheLoggedInUser();
-
-    cout << endl << "Id rzeczy: " << lastIncomeId << endl;
-    cout << "Id zalogowanego uzytkownika: " << LOGGED_IN_USER_ID;
-
-    system("pause");
-
-    return 0;
-}*/

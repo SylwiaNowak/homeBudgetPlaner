@@ -20,15 +20,6 @@ class FileWithExpenses//:public PlikTekstowy
 
     int lastExpenseId;
 
-
-
-
-
-
-
-
-
-
 public:
     FileWithExpenses(string nameOfFileWithExpenses) : NAME_OF_FILE_WITH_EXPENSES(nameOfFileWithExpenses) {
 
@@ -37,9 +28,6 @@ public:
     bool saveTheExpenseToTheFile(Expense expense);
     vector <Expense> loadExpensesBelongToLoggedInUserFromTheFile(int loggedInUserId);
     int getLastExpenseId();
-
-
-
 };
 
 #endif
